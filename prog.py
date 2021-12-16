@@ -1,4 +1,5 @@
 import pandas as pd
+import random
 
 
 # Group 1
@@ -7,7 +8,6 @@ import pandas as pd
 
 
 # Group 2
-from random import*
 data = pd.read_csv("liste_apprenants.csv")
 
 def Tirage2(data):
@@ -33,7 +33,7 @@ def Tirage3():
     
     for k in range(N):
         
-        r = round(random()*(N-k)-1)
+        r = round(random.random()*(N-k)-1)
         
         if k%3 == 0 :
             Tirage[0].append(L[r])
@@ -54,9 +54,6 @@ def Tirage3():
 
 # In[223]:
 
-
-import pandas as pd
-import random
 
 
 # In[231]:
@@ -82,7 +79,7 @@ df
 # In[234]:
 
 
-df1= pd.DataFrame(df[['Prénom','Nom']])
+df1= pd.DataFrame(df[['Prénom']])
 
 df1
 
@@ -118,8 +115,6 @@ def Tirage4(d, size=4):
          yield [d[key] for key in keys[i:i + size]]
             
 
-for group in random_group(dictionaire):
-    print(group)
 
 
 
@@ -137,10 +132,14 @@ for group in random_group(dictionaire):
 
 d = Tirage2(data)
 print(d)
+print('-------------------------------------')
 df = Tirage3()
 print(df)
-df = Tirage4()
+print('-------------------------------------')
+for group in Tirage4(dictionaire):
+    print(group)
 print(df)
-df = Tirage5()
-print(df)
-'''
+print('-------------------------------------')
+#~ df = Tirage5()
+#~ print(df)
+print('-------------------------------------')
