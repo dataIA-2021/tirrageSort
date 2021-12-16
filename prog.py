@@ -10,7 +10,10 @@ import pandas as pd
 from random import*
 
 def Tirage3():
-    #Renvoie un dataframe contenant des groupes de 3 personnes
+    """
+    Utilise le fichier liste_apprenants.csv présent dans le dossier et
+    Renvoie un dataframe contenant des groupes de 3 personnes
+    """
 
     fichier = "liste_apprenants.csv"
     df = pd.read_csv(fichier)
