@@ -17,13 +17,10 @@ def Tirage3():
     dfa = df[df.Prof==0]
     L = dfa["Prénom"].tolist()
     Grp = 3 
-    Tirage=[]
+    Tirage=[[],[],[]]
+   
     
-    for k in range (Grp):
-        Tirage.append([])
-    
-    
-    N = 16
+    N = len(L)
     
     for k in range(N):
         r = round(random()*(N-k)-1)
