@@ -13,9 +13,10 @@ import numpy
 
 # Group 4
 def Tirage5():
-    df = pd.read_csv('/home/victorien/Downloads/info_apprenants.csv',encoding = "ISO-8859-1", header = 0, sep = ';')
+    df = pd.read_csv('liste_apprenants.csv')
     
-    etudiants = df.iloc[4:20,0]
+    #etudiants = df.iloc[4:20,0]
+    etudiants = df.iloc[:, 0]
     
     def selectRandom(names):
         return numpy.random.choice(names,1)
