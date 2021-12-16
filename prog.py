@@ -16,7 +16,7 @@ def Tirage3():
     df = pd.read_csv(fichier)
     dfa = df[df.Prof==0]
     L = dfa["Prénom"].tolist()
-    Grp = 3 
+
     Tirage=[[],[],[]]
    
     
