@@ -29,21 +29,28 @@ def Tirage3():
     L = dfa["Prénom"].tolist()
 
     Tirage=[[],[],[]]
-   
-    
     N = len(L)
     
     for k in range(N):
+        
         r = round(random()*(N-k)-1)
+        
         if k%3 == 0 :
             Tirage[0].append(L[r])
+            
         elif k%3 == 1:
             Tirage[1].append(L[r])
+            
         elif k%3 == 2:
             Tirage[2].append(L[r])
+            
         L.pop(r)
-    
-    return(pd.DataFrame(Tirage))
+        
+        
+    Tirage = pd.DataFrame(Tirage)
+    return(pd.DataFrame.transpose(Tirage))
+# Group 3
+
 
 
 
