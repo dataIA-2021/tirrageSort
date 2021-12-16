@@ -8,7 +8,6 @@ import pandas as pd
 
 # Group 2
 from random import*
-import numpy as np
 
 def Tirage3():
     #Renvoie un dataframe contenant des groupes de 3 personnes
@@ -32,8 +31,8 @@ def Tirage3():
         elif k%3 == 2:
             Tirage[2].append(L[r])
         L.pop(r)
-    Tirage = np.transpose(Tirage)
-    return(pd.DataFrame(Tirage))
+    Tirage = pd.DataFrame(Tirage)
+    return(pd.DataFrame.transpose(Tirage))
 # Group 3
 
 
