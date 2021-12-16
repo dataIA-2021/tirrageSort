@@ -15,14 +15,14 @@ def Tirage3():
     fichier = "liste_apprenants.csv"
     df = pd.read_csv(fichier)
     dfa = df[df.Prof==0]
-    
+    L = dfa["Prénom"].tolist()
     Grp = 3 
     Tirage=[]
     
     for k in range (Grp):
         Tirage.append([])
     
-    L=["Marceline","Steve","Victorien","Jeremy","Eric","Clara","César","Tim","Alexia","Noli","Tess","Célia","François","Louis","Sylvain","Kyllian"]
+    
     N = 16
     
     for k in range(N):
