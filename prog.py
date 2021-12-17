@@ -154,20 +154,18 @@ def Tirage5():
 
 # Programme principal
 
-'''d = Tirage2(data)
+d = Tirage2(data)
 print(d)
 print('-------------------------------------')
-'''
+
+d = Tirage3()
+print(d)
+print('-------------------------------------')
+
 df = Tirage42()
 print(df)
 print('-------------------------------------')
 
-for group in Tirage4(dictionaire):
-    print(group)
-#print(df)
-'''
-print('-------------------------------------')
 df = Tirage5()
 print(df)
 print('-------------------------------------')
-'''
