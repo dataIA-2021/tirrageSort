@@ -1,2 +1,2 @@
-# tirrageSort
-Les tirrage au sort
+# tirage au Sort
+Les tirage au sort de groupes
