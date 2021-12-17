@@ -70,55 +70,24 @@ def Tirage3():
 # Group 3
 
 
-# In[223]:
-
-
-
-# In[231]:
-
-
 file_location = 'liste_apprenants.csv'
 df = pd.read_csv(file_location)
-df
-
-
-# In[232]:
-
-
-df.drop([0,1,2,3],0,inplace=True)
-
-
-# In[233]:
-
-
-df
-
-
-# In[234]:
-
-
-df1= pd.DataFrame(df[['Prénom']])
-
-df1
-
-
-# In[235]:
-
-
+df = df[df.Prof==0]
 df= pd.DataFrame(df['Prénom']).reset_index()
-
-df
-
-
-# In[239]:
-
-
 dictionaire = dict(df.values)
-dictionaire
 
 
-# In[240]:
-
+def Tirage42():
+    file_location = 'liste_apprenants.csv'
+    df = pd.read_csv(file_location)
+    df = df[df.Prof==0]
+    df= pd.DataFrame(df['Prénom']).reset_index()
+    dictionaire = dict(df.values)
+    listgroup = []
+    for it in Tirage4(dictionaire):
+        listgroup.append(it)
+        df = pd.DataFrame(listgroup)
+    return df
 
 # Grouper par 4, size
 # Liste des index, keys
@@ -127,11 +96,13 @@ dictionaire
 # yield à la place de return, pour afficher tous les groupes sans les répéter
 
 def Tirage4(d, size=4):
+    "Demande un dictionnaire et un int size retourne une liste de tableau contenant les membre d'un group"
     keys = list(d.keys())
     random.shuffle(keys)
-    for i in range(0, len(keys), size):
-         yield [d[key] for key in keys[i:i + size]]
-            
+    
+    for i in range(0, len(keys), size): #On prend les i par groupe de size
+         yield [d[key] for key in keys[i:i + size]] # On prend les gens de i à i+size, le yield retourne un groupe à la fois
+    
 
 
 
@@ -183,16 +154,20 @@ def Tirage5():
 
 # Programme principal
 
-d = Tirage2(data)
+'''d = Tirage2(data)
 print(d)
 print('-------------------------------------')
-df = Tirage3()
+'''
+df = Tirage42()
 print(df)
 print('-------------------------------------')
+
 for group in Tirage4(dictionaire):
     print(group)
-print(df)
+#print(df)
+'''
 print('-------------------------------------')
 df = Tirage5()
 print(df)
 print('-------------------------------------')
+'''
